@@ -12,9 +12,9 @@
 .global loader
 
 loader:
-  mov $kernel_stack, %rsp
-  movl %ebx, %edi
-  movl %eax, %esi
+  mov $kernel_stack, %esp
+  push %eax
+  push %ebx
   call kmain
 
 _stop:
