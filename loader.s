@@ -14,4 +14,14 @@
 loader:
   mov $kernel_stack, %rsp
   movl %ebx, %edi
-  movl %eax, 
+  movl %eax, %esi
+  call kmain
+
+_stop:
+  cli
+  hlt
+  jmp _stop
+
+.section .bss
+.space2*1024*1024
+kernel_stack:
