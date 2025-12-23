@@ -11,12 +11,12 @@ WARN=Wall -Werror
 LD=ld
 
 CXXFLAGS = $(DEBUG) $(OPT) $(WARN)
-CXXFLAGS += -W -m64 -fno-use-cxa-atexit -nostdlib -
+CXXFLAGS += -W -m32 -fno-use-cxa-atexit -nostdlib -
 fno-builtin -fno-rtti -fno-exceptions -fno-leading-
 underscore
 
-ASFLAGS = --64
-LDFLAGS = -MELF_X86_64
+ASFLAGS = --32
+LDFLAGS = -melf_i386
 
 objs = loader.o kernel.oobjs)
 
